@@ -1,0 +1,41 @@
+﻿SQL> create table details_of_student
+  2  (st_id number(7),
+  3  name varchar2(20),
+  4  block varchar2(1),
+  5  roomno number(3));
+
+Table created.
+
+Table created.
+
+SQL> create table details_of_mess
+  2  (st_id number(7),
+  3  mess_block varchar2(1),
+  4  mess_type varchar2(20),
+  5  mess_transfer_req varchar2(3));
+
+Table created.
+
+Table created.
+
+SQL> create table Employee
+  2  (Empatt varchar2(1),
+  3  Emp_id number(2));
+
+Table created.
+
+SQL> create table vit
+  2  (st_id number(10),
+  3  st_fee number(20));
+
+Table created.
+
+Mess foreign key:
+alter table details_of_mess add constraint id_o_st foreign key(st_id) references details_of_student(st_id);
+
+Table altered.
+
+Mess primary key:
+SQL> alter table  details_of_mess add constraint st_id_m primary key(st_id);
+
+Table altered.
